@@ -1,5 +1,8 @@
 .restaurant-detail(*ngIf='restaurant')
-  agm-map([latitude]='restaurant.location.lat', [longitude]='restaurant.location.lng')
+  agm-map([latitude]='restaurant.location.lat', [longitude]='restaurant.location.lng', [zoom]=15)
+    agm-marker([latitude]='restaurant.location.lat', [longitude]='restaurant.location.lng')
+      agm-info-window 
+        a(href="{{ gmapURL }}") Get Directions
   .name
     .is-size-7.name-text
       p.avenir-db.is-size-6 {{ restaurant.name }}
@@ -15,4 +18,4 @@
         a(href="{{ 'https://www.facebook.com/' + restaurant.contact.facebookUsername }}") {{ restaurant.contact.facebookName ? 'Facebook - ' + restaurant.contact.facebookName : ''}}
   //- .debugging {{ restaurant.location.lng }}
 
-div(*ngIf='!restaurant') Chose a restaurant
+.placeholder.has-text-centered.is-size-5(*ngIf='!restaurant') Select a Restaurant

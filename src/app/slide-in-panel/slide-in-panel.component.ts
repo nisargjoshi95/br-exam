@@ -42,14 +42,14 @@ export class SlideInPanelComponent implements OnInit {
 
   constructor() {
     this.width = (window.screen.width);
-    console.log(this.width);
+    // console.log(this.width);
   }
 
   ngOnInit() {
   }
 
   ngOnChanges(changes) {
-    console.log('changes', changes);
+    // console.log('changes', changes);
   }
 
   ngOnDestroy() {

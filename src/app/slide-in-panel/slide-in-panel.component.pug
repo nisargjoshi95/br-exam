@@ -1,7 +1,7 @@
 app-header([panelOpen]='activePanel', (closePanel)='closeView()')
 
 .parent([@slideInOut]='activePanel')
-  div
+  .list
     app-restaurant-list((restaurantSelected)='openView($event)')
-  div
+  .detail
     app-restaurant-detail([restaurant]='restaurant')

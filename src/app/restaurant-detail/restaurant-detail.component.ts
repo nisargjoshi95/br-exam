@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChildren, ElementRef, Input } from '@angular/cor
 import { MapsAPILoader, AgmMap } from '@agm/core';
 import { GoogleMapsAPIWrapper } from '@agm/core/services';
 
-import { DataService } from '../data.service';
 import { Restaurant } from '../restaurant';
 
 @Component({
@@ -13,11 +12,15 @@ import { Restaurant } from '../restaurant';
 export class RestaurantDetailComponent implements OnInit {
 
   @Input() restaurant: Restaurant;
+  public gmapURL: string;
 
-  constructor(private _dataService: DataService) {
-  }
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ngOnChanges() {
+    this.gmapURL = this.restaurant ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(this.restaurant.location.address): '';
+    console.log(this.gmapURL, 'changed')
   }
 
 }
