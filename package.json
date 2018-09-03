@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "node ./ng-add-pug-loader.js"
+    "postinstall": "node ./ng-add-pug-loader.js && ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +26,7 @@
     "bulma": "^0.7.1",
     "core-js": "^2.5.4",
     "ng-cli-pug-loader": "^0.1.3",
+    "ng2-if-media": "^1.0.0",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },

@@ -1,6 +1,6 @@
 # BrExam
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5. Project was tested on Fedora 28 running Chrome 68.0.3440.106 and iOS 11 running Safari .
 
 ## Development server
 

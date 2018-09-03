@@ -1,0 +1,18 @@
+.restaurant-detail(*ngIf='restaurant')
+  agm-map([latitude]='restaurant.location.lat', [longitude]='restaurant.location.lng')
+  .name
+    .is-size-7.name-text
+      p.avenir-db.is-size-6 {{ restaurant.name }}
+      p {{ restaurant.category }}
+  .details
+    .detail
+      p(*ngFor='let line of restaurant.location.formattedAddress') {{ line }}
+    .contact(*ngIf='restaurant.contact')
+      p.detail {{ restaurant.contact.formattedPhone ? restaurant.contact.formattedPhone : '' }}
+      p.detail
+        a(href="{{ 'https://www.twitter.com/' + restaurant.contact.twitter }}") {{ restaurant.contact.twitter ? '@' + restaurant.contact.twitter : ''}}
+      p.detail
+        a(href="{{ 'https://www.facebook.com/' + restaurant.contact.facebookUsername }}") {{ restaurant.contact.facebookName ? 'Facebook - ' + restaurant.contact.facebookName : ''}}
+  //- .debugging {{ restaurant.location.lng }}
+
+div(*ngIf='!restaurant') Chose a restaurant

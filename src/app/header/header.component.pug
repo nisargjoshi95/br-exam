@@ -1,2 +1,4 @@
-div.header.is-fixed-top
-  h1 Lunch Tyme
+div.header
+  img(src='assets/images/ic_webBack@2x.png', [ngClass]="{'invisible': panelOpen == 'left'}", (click)='goBack($event)')
+  h1.nav-title Lunch Tyme
+  img(src='assets/images/icon_map@2x.png')
